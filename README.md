@@ -7,7 +7,7 @@ Command line tool for compressing images with TinyPNG without requiring a key; S
 ## Installation
 
 ```bash
-npm install -g tinypng
+npm install -g tinypng-plus-cli
 ```
 
 ## Usage
