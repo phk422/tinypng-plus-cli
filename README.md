@@ -1,6 +1,7 @@
 # tinypng
 
 Command line tool for compressing images with TinyPNG without requiring a key; Smart WebP, PNG and JPEG Compression for Faster Websites
+
 无需申请 KEY, 可直接使用[TinyPng](https://tinypng.com/)压缩图片的命令行工具。
 
 ## Installation
