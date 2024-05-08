@@ -1,0 +1,28 @@
+{
+  "name": "tinypng-plus-cli",
+  "version": "1.0.1",
+  "description": "Command line tool for compressing images with TinyPNG without requiring a key; Smart WebP, PNG and JPEG Compression for Faster Websites",
+  "type": "module",
+  "author": "penghongkun <https://github.com/phk422>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phk422/tinypng"
+  },
+  "main": "index.js",
+  "files": [
+    "src",
+    "index.js"
+  ],
+  "bin": {
+    "tinypng-plus-cli": "index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["tinypng", "compress", "cli", "图片压缩"],
+  "dependencies": {
+    "commander": "^12.0.0",
+    "puppeteer": "^19.6.1"
+  }
+}
