@@ -29,3 +29,10 @@ Options:
 ```bash
 tinypng-plus-cli -i .\test1.jpg .\test2.jpg
 ```
+
+## TODO
+
+1. 相对路径与绝对路径支持
+2. 支持输入可以是文件夹
+3. loading展示效果
+4. 边界情况处理
