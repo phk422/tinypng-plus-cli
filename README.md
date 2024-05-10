@@ -18,7 +18,7 @@ npm install -g tinypng-plus-cli
 Usage: index [options]
 
 Options:
-  -i, --input <input...>  input path list
+  -i, --input <input...>  input path list, The total file size cannot exceed 5M
   -o, --output <output>   output folder (default: ".")
   -r, --rename <name>     the output file is renamed (default: "tinified")
   -h, --help              display help for command
@@ -27,12 +27,10 @@ Options:
 ### Example
 
 ```bash
-tinypng-plus-cli -i .\test1.jpg .\test2.jpg
+tinypng-plus-cli -i .\test2.jpg .\images d:\static\images
 ```
 
 ## TODO
 
-1. 相对路径与绝对路径支持
-2. 支持输入可以是文件夹
-3. loading展示效果
-4. 边界情况处理
+1. loading展示效果
+2. 边界情况处理

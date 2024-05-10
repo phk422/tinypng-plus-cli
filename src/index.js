@@ -2,11 +2,15 @@ import puppeteer from "puppeteer";
 import path from "path";
 import fs from "fs";
 import { program } from "commander";
+import { normalizeInputPaths, normalizeOutputPath } from "./utils.js";
 
 const DEFAULT_OUTPUT_NAME = "tinified";
 
 const options = program
-  .option("-i, --input <input...>", "input path list")
+  .option(
+    "-i, --input <input...>",
+    "input path list, The total file size cannot exceed 5M"
+  )
   .option("-o, --output <output>", "output folder", ".")
   .option(
     "-r, --rename <name>",
@@ -16,9 +20,8 @@ const options = program
   .parse(process.argv)
   .opts();
 
-const cwd = process.cwd();
-const inputPaths = options.input.map((input) => path.resolve(cwd, input));
-const outputPath = path.resolve(cwd, options.output);
+const inputPaths = normalizeInputPaths(options.input);
+const outputPath = normalizeOutputPath(options.output);
 const newName = options.rename;
 
 async function main() {
@@ -41,14 +44,15 @@ async function main() {
   });
   const watcher = fs.watch(outputPath, (type) => {
     if (type == "change") {
-      if (fs.existsSync(path.resolve(outputPath, `./${DEFAULT_OUTPUT_NAME}.zip`))) {
+      if (
+        fs.existsSync(path.resolve(outputPath, `./${DEFAULT_OUTPUT_NAME}.zip`))
+      ) {
         watcher.close();
-        if (DEFAULT_OUTPUT_NAME !== newName) {
-          fs.renameSync(
-            path.resolve(outputPath, `./${DEFAULT_OUTPUT_NAME}.zip`),
-            path.resolve(outputPath, `./${newName}.zip`)
-          );
-        }
+        const outputName = `${newName}-${Date.now()}`;
+        fs.renameSync(
+          path.resolve(outputPath, `./${DEFAULT_OUTPUT_NAME}.zip`),
+          path.resolve(outputPath, `./${outputName}.zip`)
+        );
         browser.close();
       }
     }
