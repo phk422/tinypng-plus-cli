@@ -1,6 +1,6 @@
 {
   "name": "tinypng-plus-cli",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Command line tool for compressing images with TinyPNG without requiring a key; Smart WebP, PNG and JPEG Compression for Faster Websites",
   "type": "module",
   "author": "penghongkun <https://github.com/phk422>",
