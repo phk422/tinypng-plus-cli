@@ -32,5 +32,4 @@ tinypng-plus-cli -i .\test2.jpg .\images d:\static\images
 
 ## TODO
 
-1. loading展示效果
-2. 边界情况处理
+边界情况处理

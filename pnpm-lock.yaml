@@ -2,10 +2,12 @@ lockfileVersion: 5.4
 
 specifiers:
   commander: ^12.0.0
+  consola: ^3.2.3
   puppeteer: ^19.6.1
 
 dependencies:
   commander: 12.0.0
+  consola: 3.2.3
   puppeteer: 19.11.1
 
 packages:
@@ -185,6 +187,11 @@ packages:
   /commander/12.0.0:
     resolution: {integrity: sha512-MwVNWlYjDTtOjX5PiD7o5pK0UrFU/OYgcJfjjK4RaHZETNtjJqrZa9Y9ds88+A+f+d5lv+561eZ+yCKoS3gbAA==}
     engines: {node: '>=18'}
+    dev: false
+
+  /consola/3.2.3:
+    resolution: {integrity: sha512-I5qxpzLv+sJhTVEoLYNcTW+bThDCPsit0vLNKShZx6rLtpilNpmmeTPaeqJb9ZE9dV3DGaeby6Vuhrw38WjeyQ==}
+    engines: {node: ^14.18.0 || >=16.10.0}
     dev: false
 
   /cosmiconfig/8.1.3:
