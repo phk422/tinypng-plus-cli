@@ -36,7 +36,7 @@ async function main() {
   );
   await inputEle.uploadFile(...inputPaths);
   const downloadBtn = await page.waitForSelector(
-    "#__next > div > main > div.uexekpa > div.upload__footer > div.s1uwtt8h > div.button-wrapper.b1g7mude > div:nth-child(4) > button"
+    "#__next > div > main > div.uexekpa > div.upload__output-container > div.c1uwtt8h > div > div.button-wrapper.b1g7mude > div.button-wrapper.action-button.s1e4q9ty > button"
   );
   await downloadBtn.evaluateHandle((el) => el.click());
   const session = await page.target().createCDPSession();
